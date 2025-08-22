@@ -111,12 +111,44 @@
 
 # 7. Use a variable to store a number, then write a condition that prints "Independence Day" if the number is less than 0, and prints "Liberation Day" otherwise.
 
+# var1 = -1
+
+# if var1 < 0
+#   puts "Independence Day"
+# else
+#   puts "Liberation Day"
+# end
+
 # 8. Use a variable to store a string, then write a condition that prints "Valid email" if the string contains the @ symbol, and prints "Invalid email" otherwise.
+
+# string = "wrong@"
+
+# if string.include? ("@")
+#   puts "Valid email"
+# else
+#   puts "Invalid email"
+# end
 
 # 9. Use variables to store a password and password confirmation, then write a condition that prints "Password doesn't match" if the two are different, and prints "Password confirmed" if they are the same.
 
+# password1 = "password"
+# password_confirm = "password"
+
+# if password1 == password_confirm
+#   puts "Password confirmed"
+# else
+#   puts "Password doesn't match"
+# end
+
 # 10. Use a variable to store a number, then write a condition that prints "Passing grade" if the number is greater than or equal to 70, and prints "Failing grade" otherwise.
 
+number = 61
+
+if number >= 70
+  puts "Passing grade"
+else
+  puts "Failing grade"
+end
 
 
 
