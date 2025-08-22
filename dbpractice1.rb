@@ -142,13 +142,13 @@
 
 # 10. Use a variable to store a number, then write a condition that prints "Passing grade" if the number is greater than or equal to 70, and prints "Failing grade" otherwise.
 
-number = 61
+# number = 61
 
-if number >= 70
-  puts "Passing grade"
-else
-  puts "Failing grade"
-end
+# if number >= 70
+#   puts "Passing grade"
+# else
+#   puts "Failing grade"
+# end
 
 
 
@@ -184,3 +184,26 @@ end
 # end
 
 # puts "Congrats, you guessed Hagatna!"
+
+# 4. Write a while loop that prints the temperatures from 75 to 95 degrees, increasing by 2 each time.
+
+# temp = 75
+
+# while temp <=95
+#   puts temp
+#   temp += 2
+# end
+
+# 5. Write a while loop that prints the year "2023" eight times.
+
+# year = 2023
+
+# i = 1
+
+# while i <= 8
+#   puts year
+#   i += 1
+# end
+
+# 6. Write a while loop that asks the user to enter a rainfall amount in inches and will run forever until the user enters a number greater than 3.
+
