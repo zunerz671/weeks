@@ -207,3 +207,42 @@
 
 # 6. Write a while loop that asks the user to enter a rainfall amount in inches and will run forever until the user enters a number greater than 3.
 
+# puts "Enter a rainfall amount"
+
+# input = gets.chomp.to_i
+
+# while input <= 3
+#   puts "Enter a rainfall amount"
+#   input = gets.chomp.to_i
+# end
+
+# 7. Write a while loop that prints the numbers 50 to 70.
+
+# number = 50
+
+# while number <= 70
+#   puts number
+#   number += 1
+# end
+
+#8. Write a while loop that prints the phrase "Pacific Paradise" 12 times.
+
+# phrase = "Pacific Paradise"
+
+# i = 1
+
+# while i <= 12
+#   puts "#{i} #{phrase}"
+#   i += 1
+# end
+
+# 9. Write a while loop that asks the user to enter a number and will run forever until the user enters a number less than 0.
+
+while true
+  puts "enter a number"
+  number = get.chomp.to_i
+
+  if number < 0
+    break
+  end
+end
