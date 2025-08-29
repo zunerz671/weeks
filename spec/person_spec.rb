@@ -46,7 +46,7 @@ RSpec.describe Teacher do
       expect(teacher.subject).to eq("Ruby")
     end
   end
-
+  
   describe 'introduce' do
     it 'creates a greeting that includes name, age, and subject' do
       teacher = Teacher.new("Lanna", 23, "Ruby")
