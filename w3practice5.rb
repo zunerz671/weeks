@@ -82,22 +82,70 @@
 # Include Walkable in both classes.
 # Instantiate objects from each class and call walk.
 
-module Walkable
-  def walk
-    puts "The #{self.class} is walking."
+# module Walkable
+#   def walk
+#     puts "The #{self.class} is walking."
+#   end
+# end
+
+# class Person
+#   include Walkable
+# end
+
+# class Dog
+#   include Walkable
+# end
+
+# person = Person.new
+# dog = Dog.new
+
+# person.walk
+# dog.walk
+
+#Exercise/Homework:
+# Task: Create a CLI but use a class and it's objects instead of hashes
+# Instructions:
+# Create a Book class that has attributes for title, author, and pages_read
+# Create the initialize method
+# Set up the attr_accessor
+# Create a method called read that takes in 1 parameter (pages), which basically adds pages to @pages_read to update it based on how many pages the user read and then print out a message saying they've read x amount of pages
+# Test it out by creating a book object (ex. book = Book.new)
+# Test the read method by doing something like book.read(100)
+# Now that you have that working, now use the skeleton for the loop do function down below
+# Use gets.chomp to get input from the user.
+# Provide a menu for the user to choose actions.
+# Allow them to add a book
+# List all books
+# Read pages (uses the read method from your Book class)
+# Exit
+# Do this step by step!
+# And run your code to test it at each step!
+
+# -----------
+
+class Book  # create a Book class
+  
+  def initialize(title, author, pages_read = 0) # method, attributes 
+     @title = title
+     @author = author
+     @pages_read = pages_read   
+  end 
+  
+  attr_accessor :title, :author, :pages_read
+
+  def read(pages = 0) # input pages read, if none, default 0.
+    @pages = pages
+    @pages_read += pages # add pages to pages_read
+    puts "You have inputted #{pages} pages read."
+    puts "You have now read a total of #{@pages_read} pages, from the book #{@title}, written by #{@author}." # read x amount of pages
   end
+
 end
 
-class Person
-  include Walkable
-end
+book1 = Book.new("Harry Potter", "J.K", 0)
 
-class Dog
-  include Walkable
-end
+puts book1.read
+puts book1.read(50)
+puts book1.read(100)
 
-person = Person.new
-dog = Dog.new
 
-person.walk
-dog.walk
