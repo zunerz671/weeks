@@ -44,30 +44,60 @@
 # Instantiate objects from both Car and Motorcycle and call the drive method on each.
 # Print or return the result so you can see that both classes share the same functionality.
 
-module Driveable
-  def drive(vehicle)
-    puts "Driving a #{self.class}...#{vehicle}. "
-  end
-end
+# module Driveable
+#   def drive(vehicle)
+#     puts "Driving a #{self.class}...#{vehicle}. "
+#   end
+# end
 
-class Car 
-  include Driveable
+# class Car 
+#   include Driveable
 
-  def initialize(name)
-    @name = name
-    drive("and it is a #{@name}")
-  end
-end
+#   def initialize(name)
+#     @name = name
+#     drive("and it is a #{@name}")
+#   end
+# end
 
-class Motorcycle 
-  include Driveable
+# class Motorcycle 
+#   include Driveable
 
-  def initialize(name)
-    @name = name
-    drive("and it is a #{@name}")
-  end
-end
+#   def initialize(name)
+#     @name = name
+#     drive("and it is a #{@name}")
+#   end
+# end
 
-car = Car.new("Honda")
-motorcycle = Motorcycle.new("Honda Shadow")
+# car = Car.new("Honda")
+# motorcycle = Motorcycle.new("Honda Shadow")
 # car.drive("Honda")
+
+# -------------------------
+
+# Exercise:
+# Task: Create a module and include it in multiple classes.
+# Instructions:
+# Define a module Walkable with a method walk that outputs a walking message.
+# Create two classes, Person and Dog.
+# Include Walkable in both classes.
+# Instantiate objects from each class and call walk.
+
+module Walkable
+  def walk
+    puts "The #{self.class} is walking."
+  end
+end
+
+class Person
+  include Walkable
+end
+
+class Dog
+  include Walkable
+end
+
+person = Person.new
+dog = Dog.new
+
+person.walk
+dog.walk
