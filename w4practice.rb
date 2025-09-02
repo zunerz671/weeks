@@ -58,8 +58,8 @@ class Book
 
 end
 
-car = Car.new("toyota", "tacoma", 2020)
-car.car_info
+# car = Car.new("toyota", "tacoma", 2020)
+# car.car_info
 
 
 # book = Book.new("HP", "JK", 10)
