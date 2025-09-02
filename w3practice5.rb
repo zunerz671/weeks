@@ -44,33 +44,33 @@
 # Instantiate objects from both Car and Motorcycle and call the drive method on each.
 # Print or return the result so you can see that both classes share the same functionality.
 
-# module Driveable
-#   def drive(vehicle)
-#     puts "Driving a #{self.class}...#{vehicle}. "
-#   end
-# end
+module Driveable
+  def drive(vehicle)
+    puts "Driving a #{self.class}...#{vehicle}. "
+  end
+end
 
-# class Car 
-#   include Driveable
+class Car 
+  include Driveable
 
-#   def initialize(name)
-#     @name = name
-#     drive("and it is a #{@name}")
-#   end
-# end
+  def initialize(name)
+    @name = name
+    drive("and it is a #{@name}")
+  end
+end
 
-# class Motorcycle 
-#   include Driveable
+class Motorcycle 
+  include Driveable
 
-#   def initialize(name)
-#     @name = name
-#     drive("and it is a #{@name}")
-#   end
-# end
+  def initialize(name)
+    @name = name
+    drive("and it is a #{@name}")
+  end
+end
 
-# car = Car.new("Honda")
-# motorcycle = Motorcycle.new("Honda Shadow")
-# car.drive("Honda")
+car = Car.new("Honda")
+motorcycle = Motorcycle.new("Honda Shadow")
+car.drive("Honda")
 
 # -------------------------
 
@@ -194,7 +194,7 @@ loop do
       puts "No books yet."
     
     else
-      books.each_with_index do |book, index|
+      books.each_with_index do |book, index| #Why .each do not work?
         puts "#{index + 1}. #{book.title} by #{book.author} (Pages read: #{book.pages_read})"
       end
     end
@@ -208,7 +208,16 @@ loop do
       puts "No books available. Please add a book first."
     
     else
+        books.each_with_index do |book, index| #Why .each do not work?
+        puts "#{index + 1}. #{book.title} by #{book.author} (Pages read: #{book.pages_read})"
 
+        puts "Enter the number of the book: "
+        choice = gets.chomp.to_i
+
+        if choice 
+          
+        end
+      end
     end
     # - Otherwise:
     #   * Show a numbered list of book titles
@@ -229,4 +238,4 @@ loop do
   
 end
 
-puts books
+# puts books
