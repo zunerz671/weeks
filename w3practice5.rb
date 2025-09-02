@@ -105,12 +105,12 @@
 #Exercise/Homework:
 # Task: Create a CLI but use a class and it's objects instead of hashes
 # Instructions:
-# Create a Book class that has attributes for title, author, and pages_read
-# Create the initialize method
-# Set up the attr_accessor
-# Create a method called read that takes in 1 parameter (pages), which basically adds pages to @pages_read to update it based on how many pages the user read and then print out a message saying they've read x amount of pages
-# Test it out by creating a book object (ex. book = Book.new)
-# Test the read method by doing something like book.read(100)
+## Create a Book class that has attributes for title, author, and pages_read
+## Create the initialize method
+## Set up the attr_accessor
+## Create a method called read that takes in 1 parameter (pages), which basically adds pages to @pages_read to update it based on how many pages the user read and then print out a message saying they've read x amount of pages
+## Test it out by creating a book object (ex. book = Book.new)
+## Test the read method by doing something like book.read(100)
 # Now that you have that working, now use the skeleton for the loop do function down below
 # Use gets.chomp to get input from the user.
 # Provide a menu for the user to choose actions.
@@ -136,16 +136,97 @@ class Book  # create a Book class
   def read(pages = 0) # input pages read, if none, default 0.
     @pages = pages
     @pages_read += pages # add pages to pages_read
+    
     puts "You have inputted #{pages} pages read."
+
     puts "You have now read a total of #{@pages_read} pages, from the book #{@title}, written by #{@author}." # read x amount of pages
   end
 
 end
 
-book1 = Book.new("Harry Potter", "J.K", 0)
+# book1 = Book.new("Harry Potter", "J.K", 0)
 
-puts book1.read
-puts book1.read(50)
-puts book1.read(100)
+# puts book1.read           # Tests
+# puts book1.read(50)
+# puts book1.read(100)
 
+# ------------
 
+# 1) Your Book class goes here
+
+# 2) Start with an empty array to hold Book objects
+books = []  # TODO: store Book instances here
+
+# 3) Main menu loop
+loop do
+  puts "\nBook Manager"
+  puts "1. Add a new book"
+  puts "2. List all books"
+  puts "3. Read pages"
+  puts "4. Exit"
+  print "Enter your choice: "
+  choice = gets.chomp
+
+  case choice
+  when "1"
+    # TODO:
+    puts "Enter the title of the book: "
+    title = gets.chomp
+    
+    puts "Enter the author of the book: "
+    author = gets.chomp
+    
+    book = Book.new(title, author)
+    
+    books << book 
+    
+    puts "Book added!"
+    # - Create a new Book with title and author
+    # - Push it into books
+    # - puts "Book added!"
+
+    # p books
+  when "2"
+    # TODO:
+    # - If books is empty, puts "No books yet."
+    
+    if books.empty?
+      puts "No books yet."
+    
+    else
+      books.each_with_index do |book, index|
+        puts "#{index + 1}. #{book.title} by #{book.author} (Pages read: #{book.pages_read})"
+      end
+    end
+    # - Otherwise, loop with each_with_index and print:
+    #   "#{index + 1}. #{book.title} by #{book.author} (Pages read: #{book.pages_read})"
+
+  when "3"
+    # TODO:
+    # - If books is empty, puts "No books available. Please add a book first."
+    if books.empty?
+      puts "No books available. Please add a book first."
+    
+    else
+
+    end
+    # - Otherwise:
+    #   * Show a numbered list of book titles
+    #   * Prompt: "Enter the number of the book: "
+    #   * Read number, convert to_i, and check it's between 1 and books.length
+    #   * Prompt: "How many pages did you read? "
+    #   * Read pages (to_i)
+    #   * Call books[book_number - 1].read(pages)
+    #   * Optional: puts a confirmation message
+
+  when "4"
+    puts "Goodbye!"
+    break
+
+  else
+    puts "Invalid choice. Please try again."
+  end
+  
+end
+
+puts books
