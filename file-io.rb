@@ -54,13 +54,21 @@
 # Display the total line count.
 # Include error handling for file not found.
 
+# ----
+# Bonus:
+# Add a condition in the each_line loop to only count lines that include puts
+# Hint - use the .includes?() method
+
 begin
   file = File.open("w4practice.rb", "r")
   
   i = 0
   file.each_line do |line|
     i += 1
-    puts "Read line #{i}: #{line}"
+    # puts "Read line #{i}: #{line}"
+    if line.include?("puts")
+      puts "line #{i} contains a puts: #{line}"
+    end
   end
 rescue Errno::ENOENT
   puts "File does not exist"
