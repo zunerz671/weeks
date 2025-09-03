@@ -22,21 +22,46 @@
 # Now that you’ve seen that ‘w’ overwrites everything, now change ‘w’ to ‘a’ for append and test it again to see how it appends to the end of the file rather than overwriting it.
 # Test it multiple times to see how it continues to add to the file rather than delete everything.
 
-puts "Select w, r, or a"
-selection = gets.chomp
+# puts "Select w, r, or a"
+# selection = gets.chomp
 
-puts "Please provide your name:"
-name = gets.chomp
+# puts "Please provide your name:"
+# name = gets.chomp
 
-puts "Please provide a message:"
-message = gets.chomp
+# puts "Please provide a message:"
+# message = gets.chomp
+
+# begin
+#   file = File.open("user_messages.txt", "#{selection}")
+#   file.puts "Your name: #{name}."
+#   file.puts "Your message: #{message}."
+
+#   puts "Info input was successful."
+# rescue
+#   puts "An error occured"
+
+# ensure
+#   file.close if file
+
+# end
+
+# ----------
+
+# Exercise:
+# Task: Count the number of lines in a file.
+# Instructions:
+# Read a file and count the number of lines.
+# Display the total line count.
+# Include error handling for file not found.
 
 begin
-  file = File.open("user_messages.txt", "#{selection}")
-  file.puts "Your name: #{name}."
-  file.puts "Your message: #{message}."
-
-  puts "Info input was successful."
-rescue
-  puts "An error occured"
+  file = File.open("w4practice.rb", "r")
+  
+  file.each_line do |line|
+    puts "Read line: #{line}"
+  end
+rescue Errno::ENOENT
+  puts "File does not exist"
+ensure
+  file.close if file
 end
