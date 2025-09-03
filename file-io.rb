@@ -59,19 +59,53 @@
 # Add a condition in the each_line loop to only count lines that include puts
 # Hint - use the .includes?() method
 
-begin
-  file = File.open("w4practice.rb", "r")
+# begin
+#   file = File.open("w4practice.rb", "r")
   
-  i = 0
-  file.each_line do |line|
-    i += 1
-    # puts "Read line #{i}: #{line}"
-    if line.include?("puts")
-      puts "line #{i} contains a puts: #{line}"
-    end
-  end
-rescue Errno::ENOENT
-  puts "File does not exist"
+#   i = 0
+#   file.each_line do |line|
+#     i += 1
+#     # puts "Read line #{i}: #{line}"
+#     if line.include?("puts")
+#       puts "line #{i} contains a puts: #{line}"
+#     end
+#   end
+  
+#   puts "Total lines of code: #{i}"
+# rescue Errno::ENOENT
+#   puts "File does not exist"
+  
+# ensure
+#   file.close if file
+
+# end
+
+# ---------------
+
+# Exercise:
+# Task: Save an array of hashes to a file in JSON format.
+# Instructions:
+# Define an array of hashes representing contacts.
+# Write the array to a file named contacts.json in JSON format.
+# Ensure proper error handling.
+
+require 'json'
+
+contacts = [
+  {name: "Junior", village: "Yigo", age: 47},
+  {name: "Guafi", village: "Yigo", age: 10},
+  {name: "Neng", village: "Yigo", age: 6}
+]
+
+begin
+  file = File.open("contacts.json", "w")
+  file.write(JSON.pretty_generate(contacts))
+  puts "Data saved in contacts.json"
+
+rescue
+  puts "An error occured"
+
 ensure
   file.close if file
+
 end
