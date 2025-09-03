@@ -57,8 +57,10 @@
 begin
   file = File.open("w4practice.rb", "r")
   
+  i = 0
   file.each_line do |line|
-    puts "Read line: #{line}"
+    i += 1
+    puts "Read line #{i}: #{line}"
   end
 rescue Errno::ENOENT
   puts "File does not exist"

@@ -64,6 +64,3 @@ end
 
 # book = Book.new("HP", "JK", 10)
 # p book.book_info
-
-
-
