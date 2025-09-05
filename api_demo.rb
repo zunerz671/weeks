@@ -20,4 +20,21 @@ response = Net::HTTP.get(url)
 
 data = JSON.parse(response)
 
-pp data
+# pp data
+
+# puts "Status: #{data['status']}"
+# puts "Location: #{data['location']}"
+
+i = 0 
+
+data['episode'].each_with_index do |item, index|
+  
+  if index % 2 == 0
+    puts "episode #{i + 1}: #{item}"
+    # puts "#{item}"  
+  end
+  
+  i +=1
+end
+
+# p data['episode'][0]
