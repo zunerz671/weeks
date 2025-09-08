@@ -34,7 +34,7 @@ data['episode'].each_with_index do |item, index|
     # puts "#{item}"  
   end
   
-  i +=1
+  i += 1
 end
 
 # p data['episode'][0]
